@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Postal code</th>
+      <th>String</th>
+      <th>Phone</th>
+      <th>Type</th>
+      <th>Email</th>
+      <th>Vat</th>
+      <th>Pa system</th>
+      <th>Garden</th>
+      <th>Wifi</th>
+      <th>Extra info</th>
+      <th>Own drinks</th>
+      <th>Own drinks mandatory</th>
+      <th>Parking</th>
+      <th>Person capacity</th>
+      <th>Parking spaces</th>
+      <th>Venue type</th>
+      <th>Genre</th>
+      <th>Years experience</th>
+      <th>References</th>
+      <th>Artist type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.address %></td>
+        <td><%= user.city %></td>
+        <td><%= user.postal_code %></td>
+        <td><%= user.string %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.type %></td>
+        <td><%= user.email %></td>
+        <td><%= user.vat %></td>
+        <td><%= user.pa_system %></td>
+        <td><%= user.garden %></td>
+        <td><%= user.wifi %></td>
+        <td><%= user.extra_info %></td>
+        <td><%= user.own_drinks %></td>
+        <td><%= user.own_drinks_mandatory %></td>
+        <td><%= user.parking %></td>
+        <td><%= user.person_capacity %></td>
+        <td><%= user.parking_spaces %></td>
+        <td><%= user.venue_type %></td>
+        <td><%= user.genre %></td>
+        <td><%= user.years_experience %></td>
+        <td><%= user.references %></td>
+        <td><%= user.artist_type %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

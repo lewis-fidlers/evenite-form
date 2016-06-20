@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  city: MyString
+  postal_code: MyString
+  string: MyString
+  phone: MyString
+  type: 
+  email: MyString
+  vat: MyString
+  pa_system: false
+  garden: false
+  wifi: false
+  extra_info: MyText
+  own_drinks: false
+  own_drinks_mandatory: false
+  parking: false
+  person_capacity: 1
+  parking_spaces: 1
+  venue_type: MyString
+  genre: MyString
+  years_experience: 1.5
+  references: MyText
+  artist_type: MyString
+
+two:
+  name: MyString
+  address: MyString
+  city: MyString
+  postal_code: MyString
+  string: MyString
+  phone: MyString
+  type: 
+  email: MyString
+  vat: MyString
+  pa_system: false
+  garden: false
+  wifi: false
+  extra_info: MyText
+  own_drinks: false
+  own_drinks_mandatory: false
+  parking: false
+  person_capacity: 1
+  parking_spaces: 1
+  venue_type: MyString
+  genre: MyString
+  years_experience: 1.5
+  references: MyText
+  artist_type: MyString
