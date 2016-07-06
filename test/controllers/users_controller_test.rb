@@ -18,7 +18,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, user: { address: @user.address, artist_type: @user.artist_type, city: @user.city, email: @user.email, extra_info: @user.extra_info, garden: @user.garden, genre: @user.genre, name: @user.name, own_drinks: @user.own_drinks, own_drinks_mandatory: @user.own_drinks_mandatory, pa_system: @user.pa_system, parking: @user.parking, parking_spaces: @user.parking_spaces, person_capacity: @user.person_capacity, phone: @user.phone, postal_code: @user.postal_code, references: @user.references, string: @user.string, type: @user.type, vat: @user.vat, venue_type: @user.venue_type, wifi: @user.wifi, years_experience: @user.years_experience }
+      post :create, user: { address: @user.address, artist_type: @user.artist_type, city: @user.city, email: @user.email, extra_info: @user.extra_info, garden: @user.garden, genre: @user.genre, name: @user.name, own_drinks: @user.own_drinks, own_drinks_mandatory: @user.own_drinks_mandatory, pa_system: @user.pa_system, parking: @user.parking, parking_spaces: @user.parking_spaces, person_capacity: @user.person_capacity, phone: @user.phone, postal_code: @user.postal_code, references: @user.references, type: @user.type, vat: @user.vat, venue_type: @user.venue_type, wifi: @user.wifi, years_experience: @user.years_experience }
     end
 
     assert_redirected_to user_path(assigns(:user))
@@ -35,7 +35,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    patch :update, id: @user, user: { address: @user.address, artist_type: @user.artist_type, city: @user.city, email: @user.email, extra_info: @user.extra_info, garden: @user.garden, genre: @user.genre, name: @user.name, own_drinks: @user.own_drinks, own_drinks_mandatory: @user.own_drinks_mandatory, pa_system: @user.pa_system, parking: @user.parking, parking_spaces: @user.parking_spaces, person_capacity: @user.person_capacity, phone: @user.phone, postal_code: @user.postal_code, references: @user.references, string: @user.string, type: @user.type, vat: @user.vat, venue_type: @user.venue_type, wifi: @user.wifi, years_experience: @user.years_experience }
+    patch :update, id: @user, user: { address: @user.address, artist_type: @user.artist_type, city: @user.city, email: @user.email, extra_info: @user.extra_info, garden: @user.garden, genre: @user.genre, name: @user.name, own_drinks: @user.own_drinks, own_drinks_mandatory: @user.own_drinks_mandatory, pa_system: @user.pa_system, parking: @user.parking, parking_spaces: @user.parking_spaces, person_capacity: @user.person_capacity, phone: @user.phone, postal_code: @user.postal_code, references: @user.references, type: @user.type, vat: @user.vat, venue_type: @user.venue_type, wifi: @user.wifi, years_experience: @user.years_experience }
     assert_redirected_to user_path(assigns(:user))
   end
 

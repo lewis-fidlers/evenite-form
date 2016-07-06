@@ -1,109 +1,36 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-inputs">
+    <h3><%= t ".general_info" %></h3>
+    <%= f.input :type, collection: User.types, prompt: t("user_types.placeholder") %>
+    <div class="general-info">
+      <%= f.input :name, label: t(".name"), wrapper_html: { class: "hide" } %>
+      <%= f.input :address, wrapper_html: { class: "hide all" } %>
+      <%= f.input :city, wrapper_html: { class: "hide all" } %>
+      <%= f.input :postal_code, wrapper_html: { class: "hide all" } %>
+      <%= f.input :phone, wrapper_html: { class: "hide all" } %>
+      <%= f.input :email, wrapper_html: { class: "hide all" } %>
+      <%= f.input :vat, wrapper_html: { class: "hide venue" } %>
+      <%= f.input :pa_system, wrapper_html: { class: "hide" } %>
+      <%= f.input :garden, wrapper_html: { class: "hide" } %>
+      <%= f.input :wifi, wrapper_html: { class: "hide" } %>
+      <%= f.input :extra_info, wrapper_html: { class: "hide" } %>
+      <%= f.input :own_drinks, wrapper_html: { class: "hide" } %>
+      <%= f.input :own_drinks_mandatory, wrapper_html: { class: "hide" } %>
+      <%= f.input :parking, wrapper_html: { class: "hide" } %>
+      <%= f.input :person_capacity, wrapper_html: { class: "hide" } %>
+      <%= f.input :parking_spaces, wrapper_html: { class: "hide" } %>
+      <%= f.input :venue_type, wrapper_html: { class: "hide" } %>
+      <%= f.input :genre, wrapper_html: { class: "hide" } %>
+      <%= f.input :years_experience, wrapper_html: { class: "hide" } %>
+      <%= f.input :references, wrapper_html: { class: "hide" } %>
+      <%= f.input :artist_type, wrapper_html: { class: "hide" } %>
     </div>
-  <% end %>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :postal_code %><br>
-    <%= f.text_field :postal_code %>
-  </div>
-  <div class="field">
-    <%= f.label :string %><br>
-    <%= f.text_field :string %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :vat %><br>
-    <%= f.text_field :vat %>
-  </div>
-  <div class="field">
-    <%= f.label :pa_system %><br>
-    <%= f.check_box :pa_system %>
-  </div>
-  <div class="field">
-    <%= f.label :garden %><br>
-    <%= f.check_box :garden %>
-  </div>
-  <div class="field">
-    <%= f.label :wifi %><br>
-    <%= f.check_box :wifi %>
-  </div>
-  <div class="field">
-    <%= f.label :extra_info %><br>
-    <%= f.text_area :extra_info %>
-  </div>
-  <div class="field">
-    <%= f.label :own_drinks %><br>
-    <%= f.check_box :own_drinks %>
-  </div>
-  <div class="field">
-    <%= f.label :own_drinks_mandatory %><br>
-    <%= f.check_box :own_drinks_mandatory %>
-  </div>
-  <div class="field">
-    <%= f.label :parking %><br>
-    <%= f.check_box :parking %>
-  </div>
-  <div class="field">
-    <%= f.label :person_capacity %><br>
-    <%= f.number_field :person_capacity %>
-  </div>
-  <div class="field">
-    <%= f.label :parking_spaces %><br>
-    <%= f.number_field :parking_spaces %>
-  </div>
-  <div class="field">
-    <%= f.label :venue_type %><br>
-    <%= f.text_field :venue_type %>
-  </div>
-  <div class="field">
-    <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
-  </div>
-  <div class="field">
-    <%= f.label :years_experience %><br>
-    <%= f.text_field :years_experience %>
-  </div>
-  <div class="field">
-    <%= f.label :references %><br>
-    <%= f.text_area :references %>
-  </div>
-  <div class="field">
-    <%= f.label :artist_type %><br>
-    <%= f.text_field :artist_type %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <h3><%= t ".specific_info" %></h3>
+    <%= f.button :submit, t(".save") %>
   </div>
 <% end %>

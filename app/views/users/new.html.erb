@@ -1,5 +1,8 @@
-<h1>New User</h1>
+<h1><%= t ".title" %></h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', users_path %>
+<div class="small-7 columns main-form">
+  <%= render 'form' %>
+</div>
+<div class="small-5 columns extra-form">
+  Render some final fields here.
+</div>

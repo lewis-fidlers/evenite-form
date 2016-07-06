@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user_types:
+    venue: "Venue"
+    dj: "Dj"
+    catering: "Catering"
+    Artist: "Artist"
+  users:
+    new:
+      title: Register for Evenite.
+    form:
+      name: Your name
