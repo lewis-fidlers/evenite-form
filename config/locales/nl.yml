@@ -12,7 +12,7 @@ nl:
       name: Je naam
       save: Registreer
       general_info: Algemene info
-      speficic_info: Details
+      specific_info: Details
   activerecord:
     errors:
       messages:

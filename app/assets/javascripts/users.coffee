@@ -3,6 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('#user_type').on 'change', ->
-    type = $(@).val()
-    $(".general-parts").show()
-    $(".all").show()
+    type = $(@).val().toLowerCase()
+    toggleSpecificInfo(type)
+
+toggleSpecificInfo = (activeType) ->
+  if $('.active').length
+    $('.active').fadeToggle 'fast', ->
+      $('.active').removeClass 'active'
+      $('.' + activeType).fadeIn 'fast'
+      $('.' + activeType).addClass('active')
+  else
+    $('.' + activeType).fadeIn 'fast'
+    $('.' + activeType).addClass('active')

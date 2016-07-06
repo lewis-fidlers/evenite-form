@@ -4,33 +4,50 @@
   <div class="form-inputs">
     <h3><%= t ".general_info" %></h3>
     <%= f.input :type, collection: User.types, prompt: t("user_types.placeholder") %>
-    <div class="general-info">
-      <%= f.input :name, label: t(".name"), wrapper_html: { class: "hide" } %>
-      <%= f.input :address, wrapper_html: { class: "hide all" } %>
-      <%= f.input :city, wrapper_html: { class: "hide all" } %>
-      <%= f.input :postal_code, wrapper_html: { class: "hide all" } %>
-      <%= f.input :phone, wrapper_html: { class: "hide all" } %>
-      <%= f.input :email, wrapper_html: { class: "hide all" } %>
-      <%= f.input :vat, wrapper_html: { class: "hide venue" } %>
-      <%= f.input :pa_system, wrapper_html: { class: "hide" } %>
-      <%= f.input :garden, wrapper_html: { class: "hide" } %>
-      <%= f.input :wifi, wrapper_html: { class: "hide" } %>
-      <%= f.input :extra_info, wrapper_html: { class: "hide" } %>
-      <%= f.input :own_drinks, wrapper_html: { class: "hide" } %>
-      <%= f.input :own_drinks_mandatory, wrapper_html: { class: "hide" } %>
-      <%= f.input :parking, wrapper_html: { class: "hide" } %>
-      <%= f.input :person_capacity, wrapper_html: { class: "hide" } %>
-      <%= f.input :parking_spaces, wrapper_html: { class: "hide" } %>
-      <%= f.input :venue_type, wrapper_html: { class: "hide" } %>
-      <%= f.input :genre, wrapper_html: { class: "hide" } %>
-      <%= f.input :years_experience, wrapper_html: { class: "hide" } %>
-      <%= f.input :references, wrapper_html: { class: "hide" } %>
-      <%= f.input :artist_type, wrapper_html: { class: "hide" } %>
+
+    <div class="type-dependant-inputs">
+      <div class="general-info">
+        <%= f.input :name, label: t(".name"), wrapper_html: { class: "all" } %>
+        <%= f.input :address, wrapper_html: { class: "all" } %>
+        <%= f.input :city, wrapper_html: { class: "all" } %>
+        <%= f.input :postal_code, wrapper_html: { class: "all" } %>
+        <%= f.input :phone, wrapper_html: { class: "all" } %>
+        <%= f.input :email, wrapper_html: { class: "all" } %>
+        <%= f.input :vat, wrapper_html: { class: "all" } %>
+
+
+        <div class="specific-info">
+          <div class="venue-fields">
+            <%= f.input :venue_type, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :person_capacity, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :parking, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :parking_spaces, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :own_drinks, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :own_drinks_mandatory, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :pa_system, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :garden, wrapper_html: { class: "hide venue specific" } %>
+            <%= f.input :wifi, wrapper_html: { class: "hide venue specific" } %>
+          </div>
+
+          <div class="dj-fields">
+            <%= f.input :genre, wrapper_html: { class: "hide dj" } %>
+          </div>
+
+          <div class="artist-fields">
+            <%= f.input :artist_type, wrapper_html: { class: "hide artist specific" } %>
+          </div>
+
+          <div class="multiple">
+            <%= f.input :extra_info, wrapper_html: { class: "hide all" } %>
+            <%= f.input :years_experience, wrapper_html: { class: "hide dj artist" } %>
+            <%= f.input :references, wrapper_html: { class: "hide dj artist" } %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="form-actions">
-    <h3><%= t ".specific_info" %></h3>
     <%= f.button :submit, t(".save") %>
   </div>
 <% end %>

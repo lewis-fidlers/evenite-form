@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   USER_TYPES = %w(Venue Dj Artist).freeze
-  validates :name, presence: true
+  validates_presence_of :email, :name
   validate :correct_type
 
   def self.types
